@@ -6,7 +6,12 @@ local PART_SIZE         = nil
 local PART_TRANSPARENCY = nil
 local START_INTENSITY	= nil
 
-local BLUR_OBJ          = nil
+local BLUR_OBJ          = Instance.new("DepthOfFieldEffect")
+BLUR_OBJ.FarIntensity   = 0
+BLUR_OBJ.NearIntensity  = nil
+BLUR_OBJ.FocusDistance  = 0
+BLUR_OBJ.InFocusRadius  = 0
+BLUR_OBJ.Parent         = nil
 
 local PartsList         = {}
 local BlursList         = {}
@@ -14,20 +19,20 @@ local BlurObjects       = {}
 local BlurredGui        = {}
 
 
-local Frame;
+local ParentFrame;
 function BlurredGui.init(parent)
-    Frame = parent
+    ParentFrame = parent
 
     BLUR_SIZE         = Vector2.new(12, 12)
     PART_SIZE         = 0.01
     PART_TRANSPARENCY = 1 - 1e-7
     START_INTENSITY	= 1
     
-    Frame:SetAttribute("BlurIntensity", START_INTENSITY)
+    ParentFrame:SetAttribute("BlurIntensity", START_INTENSITY)
 
     local BLUR_OBJ          = Instance.new("DepthOfFieldEffect")
     BLUR_OBJ.FarIntensity   = 0
-    BLUR_OBJ.NearIntensity  = Frame:GetAttribute("BlurIntensity")
+    BLUR_OBJ.NearIntensity  = ParentFrame:GetAttribute("BlurIntensity")
     BLUR_OBJ.FocusDistance  = 0.25
     BLUR_OBJ.InFocusRadius  = 0
     BLUR_OBJ.Parent         = Lighting
@@ -148,8 +153,8 @@ function updateGui(blurObj)
 end
 
 function BlurredGui.updateAll()
-	BLUR_OBJ.NearIntensity = tonumber(Frame:GetAttribute("BlurIntensity"))
-	
+	BLUR_OBJ.NearIntensity = tonumber(ParentFrame:GetAttribute("BlurIntensity"))
+
 	for i = 1, #BlursList do
 		updateGui(BlursList[i])
 	end
@@ -166,7 +171,20 @@ function BlurredGui:Destroy()
 	rebuildPartsList()
 end
 
---BlurredGui.new(script.Parent, "Rectangle")
+local b = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+b["Name"] = [[EraGui]];
+b["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+b["ResetOnSpawn"] = false;
 
---BlurredGui.updateAll()
+-- StarterGui.EraGui.MainWindow
+local e = Instance.new("Frame", b);
+e["BorderSizePixel"] = 0;
+e["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+e["AnchorPoint"] = Vector2.new(0.5, 0.5);
+e["Size"] = UDim2.new(0, 645, 0, 435);
+e["Position"] = UDim2.new(0.5, 0, 0.5, 0)
+e["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+e["Name"] = [[MainWindow]];
+e["BackgroundTransparency"] = 0.5;
+
 return BlurredGui
