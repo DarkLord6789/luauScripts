@@ -148,7 +148,7 @@ function updateGui(blurObj)
 end
 
 function BlurredGui.updateAll()
-	BLUR_OBJ.NearIntensity = tonumber(script.Parent:GetAttribute("BlurIntensity"))
+	BLUR_OBJ.NearIntensity = tonumber(Frame:GetAttribute("BlurIntensity"))
 	
 	for i = 1, #BlursList do
 		updateGui(BlursList[i])
