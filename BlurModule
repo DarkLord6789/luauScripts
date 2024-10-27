@@ -15,7 +15,7 @@ local BlurredGui        = {}
 
 
 local Frame;
-function init(parent)
+function BlurredGui.init(parent)
     Frame = parent
 
     BLUR_SIZE         = Vector2.new(12, 12)
