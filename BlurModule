@@ -1,27 +1,39 @@
 local Lighting          = game:GetService("Lighting")
 local camera			= workspace.CurrentCamera
 
-local BLUR_SIZE         = Vector2.new(12, 12)
-local PART_SIZE         = 0.01
-local PART_TRANSPARENCY = 1 - 1e-7
-local START_INTENSITY	= 1
+local BLUR_SIZE         = nil
+local PART_SIZE         = nil
+local PART_TRANSPARENCY = nil
+local START_INTENSITY	= nil
 
-
-script.Parent:SetAttribute("BlurIntensity", START_INTENSITY)
-
-local BLUR_OBJ          = Instance.new("DepthOfFieldEffect")
-BLUR_OBJ.FarIntensity   = 0
-BLUR_OBJ.NearIntensity  = script.Parent:GetAttribute("BlurIntensity")
-BLUR_OBJ.FocusDistance  = 0.25
-BLUR_OBJ.InFocusRadius  = 0
-BLUR_OBJ.Parent         = Lighting
+local BLUR_OBJ          = nil
 
 local PartsList         = {}
 local BlursList         = {}
 local BlurObjects       = {}
 local BlurredGui        = {}
 
-BlurredGui.__index      = BlurredGui
+
+local Frame;
+function init(parent)
+    Frame = parent
+
+    BLUR_SIZE         = Vector2.new(12, 12)
+    PART_SIZE         = 0.01
+    PART_TRANSPARENCY = 1 - 1e-7
+    START_INTENSITY	= 1
+    
+    Frame:SetAttribute("BlurIntensity", START_INTENSITY)
+
+    local BLUR_OBJ          = Instance.new("DepthOfFieldEffect")
+    BLUR_OBJ.FarIntensity   = 0
+    BLUR_OBJ.NearIntensity  = Frame:GetAttribute("BlurIntensity")
+    BLUR_OBJ.FocusDistance  = 0.25
+    BLUR_OBJ.InFocusRadius  = 0
+    BLUR_OBJ.Parent         = Lighting
+
+    BlurredGui.__index      = BlurredGui
+end
 
 function rayPlaneIntersect(planePos, planeNormal, rayOrigin, rayDirection)
 	local n = planeNormal
