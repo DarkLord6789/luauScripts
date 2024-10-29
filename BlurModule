@@ -166,7 +166,7 @@ function BlurredGui.updateAll()
 end
 
 function BlurredGui.Destroy(Partt)
-	Partt:Destroy()
+	Partt.Part:Destroy()
 	BlurObjects[self] = nil
 	rebuildPartsList()
 end
