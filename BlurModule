@@ -23,7 +23,7 @@ local ParentFrame;
 function BlurredGui.init(parent)
     ParentFrame = parent
 
-    BLUR_SIZE         = Vector2.new(12, 12)
+    BLUR_SIZE         = Vector2.new(10, 10)
     PART_SIZE         = 0.01
     PART_TRANSPARENCY = 1 - 1e-7
     START_INTENSITY	= 1
