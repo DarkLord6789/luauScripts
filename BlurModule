@@ -165,8 +165,8 @@ function BlurredGui.updateAll()
 	BLUR_OBJ.FocusDistance = 0.25 - camera.NearPlaneZ
 end
 
-function BlurredGui.Destroy()
-	ParentFrame.Part:Destroy()
+function BlurredGui.Destroy(Partt)
+	Partt:Destroy()
 	BlurObjects[self] = nil
 	rebuildPartsList()
 end
