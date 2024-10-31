@@ -2,23 +2,23 @@ local Themes = {
 	MenuTheme = {
 		Dark = {
 			SecondElements = Color3.fromRGB(96, 205, 255);
-			
+
 			BlurredMain = Color3.fromRGB(15,15,15);
 			BlurredBorder = Color3.fromRGB(0, 0, 0);
 			BlurredGradient = ColorSequence.new(Color3.fromRGB(21, 21, 21), Color3.fromRGB(16, 16, 16));
 			BlurredTransparency = 0.6;
-			
+
 			Lines = Color3.fromRGB(78, 81, 86);
-			
+
 			ElementMain = Color3.fromRGB(255,255,255);
 			ElementBorder = Color3.fromRGB(80,80,80);
 			ElementTransparency = 0.92;
-			
+
 			ToggleKnob = Color3.fromRGB(0,0,0);
-			
+
 			DropdownMain = Color3.fromRGB(255, 255, 255);
 			DropdownTransparency = 0.93;
-			
+
 			Text = Color3.fromRGB(240, 240, 240);
 		},
 		Light = {
@@ -34,12 +34,12 @@ local Themes = {
 			ElementMain = Color3.fromRGB(255,255,255);
 			ElementBorder = Color3.fromRGB(160,160,160);
 			ElementTransparency = 0.75;
-			
+
 			ToggleKnob = Color3.fromRGB(255, 255, 255);
-			
+
 			DropdownMain = Color3.fromRGB(231, 231, 231);
 			DropdownTransparency = 0.1;
-			
+
 			Text = Color3.fromRGB(0,0,0);
 		},
 	},
