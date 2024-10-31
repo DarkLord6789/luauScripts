@@ -1,4 +1,4 @@
-local Notify = {}
+Notify = {}
 
 function Notify:sendNotify(name : string, text : string, duration : number, icon : string)
 	
