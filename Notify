@@ -1,6 +1,7 @@
 local tweenService = game:GetService("TweenService")
 local runService = game:GetService("RunService")
 local coreGui = game:GetService("CoreGui")
+local BlurModule = loadstring(game:HttpGet('https://raw.githubusercontent.com/DarkLord6789/luauScripts/refs/heads/main/BlurModule'))()
 
 local Notify = {}
 
@@ -41,11 +42,11 @@ function Notify:NewNotify(name, text, cooldown)
 		-- StarterGui.DisplayNotify.NotifyHolders.Notify
 		Message["4"] = Instance.new("CanvasGroup", Notify["2"]);
 		Message["4"]["BorderSizePixel"] = 0;
-		Message["4"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 16);
-		Message["4"]["Size"] = UDim2.new(1, 0, 0, 60);
+		Message["4"]["BackgroundColor3"] = Color3.fromRGB(25, 25, 25);
+		Message["4"]["Size"] = UDim2.new(1, 0, 0, 65);
 		Message["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 		Message["4"]["Name"] = [[Notify]];
-		Message["4"]["BackgroundTransparency"] = 0.4;
+		Message["4"]["BackgroundTransparency"] = 0.5;
 		Message["4"]["GroupTransparency"] = 1;
 
 		-- StarterGui.DisplayNotify.NotifyHolders.Notify.Title
@@ -121,10 +122,15 @@ function Notify:NewNotify(name, text, cooldown)
 		Message["b"] = Instance.new("UICorner", Message["9"]);
 	end
 	
+	BlurModule.init(Message["4"])
+	BlurObj = BlurModule.new(Message["4"], "Rectangle")
+	BlurModule.updateAll()
+
 	function Message:Close()
 		tweenService:Create(Message["4"], TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {GroupTransparency = 1}):Play()
 		task.wait(0.3)
 		Message["4"]:Destroy()
+		BlurModule.Destroy(BlurObj)
 	end
 	
 	tweenService:Create(Message["4"], TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {GroupTransparency = 0}):Play()
@@ -141,6 +147,6 @@ function Notify:NewNotify(name, text, cooldown)
 	return Message
 end
 --EXAMPLE:::
---Notify:NewNotify("Era Hub", "Hub Is Loading wait..", 3)
+--Notify:NewNotify("Era Hub", "Hub Is Loading wai..", 3)
 
 return Notify
