@@ -17,11 +17,10 @@ local PartsList         = {}
 local BlursList         = {}
 local BlurObjects       = {}
 local BlurredGui        = {}
-local BlurGui = {}
 
 
 local ParentFrame;
-function BlurGui.init(parent)
+function BlurredGui.init(parent)
     ParentFrame = parent
 
     BLUR_SIZE         = Vector2.new(14, 14)
@@ -39,8 +38,6 @@ function BlurGui.init(parent)
     BLUR_OBJ.Parent         = Lighting
 
     BlurredGui.__index      = BlurredGui
-
-	return BlurredGui
 end
 
 function rayPlaneIntersect(planePos, planeNormal, rayOrigin, rayDirection)
@@ -176,5 +173,4 @@ function BlurredGui.Destroy(Partt)
 	rebuildPartsList()
 end
 
-
-return BlurGui
+return BlurredGui
