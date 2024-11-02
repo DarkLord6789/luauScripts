@@ -1,0 +1,56 @@
+local ChamsType = {
+	default = {
+		highlightColor = Color3.fromRGB(200, 200, 200);
+		highlightOutColor = Color3.fromRGB(120, 120, 120);
+		highlightTransparency = 0.5;
+		highlightOutlineTransparency = 0;
+		
+		customHum = false;
+	};
+	interferences = {
+		highlightColor = Color3.fromRGB(24, 105, 255);
+		highlightOutColor = Color3.fromRGB(30, 158, 255);
+		highlightTransparency = 0.9;
+		highlightOutlineTransparency = 0.5;
+
+		customHum = true;
+		humPartsColor = Color3.fromRGB(47, 120, 255);
+		humTextureId = "rbxassetid://4504363124";
+		humMaterial = "ForceField";
+	};
+	obsidian = {
+		highlightColor = Color3.fromRGB(25,25,25);
+		highlightOutColor = Color3.fromRGB(45,45,45);
+		highlightTransparency = 0.6;
+		highlightOutlineTransparency = 0;
+
+		customHum = true;
+		humPartsColor = Color3.fromRGB(35,35,35);
+		humTextureId = "rbxassetid://4887387040";
+		humMaterial = "ForceField";
+	};
+	rose = {
+		highlightColor = Color3.fromRGB(55, 0, 0);
+		highlightOutColor = Color3.fromRGB(85, 0, 0);
+		highlightTransparency = 0.6;
+		highlightOutlineTransparency = 0;
+
+		customHum = true;
+		humPartsColor = Color3.fromRGB(75,0,0);
+		humTextureId = "rbxassetid://4887387040";
+		humMaterial = "ForceField";
+	};
+	hack = {
+		highlightColor = Color3.fromRGB(20, 115, 10);
+		highlightOutColor = Color3.fromRGB(40, 130, 25);
+		highlightTransparency = 0.8;
+		highlightOutlineTransparency = 0.5;
+
+		customHum = true;
+		humPartsColor = Color3.fromRGB(30, 125, 20);
+		humTextureId = "rbxassetid://14810177971";
+		humMaterial = "ForceField";
+	};
+}
+
+return ChamsType
