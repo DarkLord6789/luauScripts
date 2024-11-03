@@ -49,8 +49,8 @@ function ChamsLibrary:Exist(Dir) -- "AlwaysOnTop", ""
 	end
 end
 
-function ChamsLibrary:UpdateHumanoid(PDir ,theme)
-	for i, v in pairs(PDIR:GetChildren()) do
+function ChamsLibrary:UpdateHumanoid(PDir, theme)
+	for i, v in pairs(PDir:GetChildren()) do
 		if v:IsA("MeshPart") then
 			v.Color = chamsType.humPartsColor
 			v.TextureID = chamsType.humTextureId 
