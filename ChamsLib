@@ -56,22 +56,37 @@ function ChamsLibrary:Exist(Dir) -- "AlwaysOnTop", ""
 end
 
 function ChamsLibrary:UpdateHumanoid(PDir, theme)
-	if not theme.customHum then
-		return
-	end
 	for i, v in pairs(PDir:GetChildren()) do
-		if v:IsA("MeshPart") then
-			v.Color = theme.humPartsColor
-			v.TextureID = theme.humTextureId 
-			v.Material = theme.humMaterial
-		end
-		if v:IsA("Part") then
-			v.Color = theme.humPartsColor
-			v.Material = theme.humMaterial
-			if v:FindFirstChild("face") then
-				v.face.Texture = theme.humTextureId
-			elseif v:FindFirstChild("SurfaceAppearance") then
-				v.SurfaceAppearance.ColorMap = theme.humTextureId
+		if theme.customHum then
+			if v:IsA("MeshPart") then
+				v.Color = theme.humPartsColor
+				v.TextureID = theme.humTextureId 
+				v.Material = theme.humMaterial
+			end
+			if v:IsA("Part") then
+				v.Color = theme.humPartsColor
+				v.Material = theme.humMaterial
+				if v:FindFirstChild("face") then
+					v.face.Texture = theme.humTextureId
+				elseif v:FindFirstChild("SurfaceAppearance") then
+					v.SurfaceAppearance.ColorMap = theme.humTextureId
+				end
+			end
+
+		else
+			if v:IsA("MeshPart") then
+				v.Color = Color3.fromRGB(255,255,255)
+				v.TextureID = ""
+				v.Material = "Plastic"
+			end
+			if v.Name == "Head" then	
+				v.Color = Color3.fromRGB(255,255,255)
+				v.Material = "Plastic"
+				if v:FindFirstChild("face") then
+					v.face.Texture = ""
+				elseif v:FindFirstChild("SurfaceAppearance") then
+					v.SurfaceAppearance.ColorMap = ""
+				end
 			end
 		end
 	end
