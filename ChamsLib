@@ -73,8 +73,8 @@ function ChamsLibrary:UpdateHumanoid(PDir, theme)
 					v.SurfaceAppearance.ColorMap = theme.humTextureId
 				end
 			end
-
-		else
+		end
+		if not theme.customHum then
 			if v:IsA("MeshPart") then
 				v.Color = Color3.fromRGB(255,255,255)
 				v.TextureID = ""
