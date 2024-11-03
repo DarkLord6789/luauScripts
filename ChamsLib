@@ -1,14 +1,20 @@
 local ChamsLibrary = {}
 local ChamsType = loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkLord6789/luauScripts/refs/heads/main/ChamsThemes"))()
 
-function ChamsLibrary:SetDefaultColor(newHighlightColor, newOutlineColor)
-	ChamsType.default.highlightColor = newHighlightColor
-	ChamsType.default.highlightOutColor = newOutlineColor
+function ChamsLibrary:SetConfigColor(newHighlightColor, theme)
+	theme.highlightColor = newHighlightColor
 end
 
-function ChamsLibrary:SetDefaultTransparency(newTransparency, newOutlineTransparency)
-	ChamsType.default.highlightTransparency = newTransparency
-	ChamsType.default.highlightOutlineTransparency = newOutlineTransparency
+function ChamsLibrary:SetConfigColorOutline(newOutlineColor, theme)
+	theme.highlightOutColor = newOutlineColor
+end
+
+function ChamsLibrary:SetConfigTransparency(newTransparency, theme)
+	theme.highlightTransparency = newTransparency
+end
+
+function ChamsLibrary:SetConfigTransparencyOutline(newTransparencyOutline, theme)
+	theme.highlightOutlineTransparency = newOutlineTransparency
 end
 
 function ChamsLibrary:SetTransparencyChams(Dir, value)
@@ -50,6 +56,9 @@ function ChamsLibrary:Exist(Dir) -- "AlwaysOnTop", ""
 end
 
 function ChamsLibrary:UpdateHumanoid(PDir, theme)
+	if not theme.customHum then
+		return
+	end
 	for i, v in pairs(PDir:GetChildren()) do
 		if v:IsA("MeshPart") then
 			v.Color = theme.humPartsColor
