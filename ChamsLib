@@ -52,17 +52,17 @@ end
 function ChamsLibrary:UpdateHumanoid(PDir, theme)
 	for i, v in pairs(PDir:GetChildren()) do
 		if v:IsA("MeshPart") then
-			v.Color = chamsType.humPartsColor
-			v.TextureID = chamsType.humTextureId 
-			v.Material = chamsType.humMaterial
+			v.Color = theme.humPartsColor
+			v.TextureID = theme.humTextureId 
+			v.Material = theme.humMaterial
 		end
 		if v:IsA("Part") then
-			v.Color = chamsType.humPartsColor
-			v.Material = chamsType.humMaterial
+			v.Color = theme.humPartsColor
+			v.Material = theme.humMaterial
 			if v:FindFirstChild("face") then
-				v.face.Texture = chamsType.humTextureId
+				v.face.Texture = theme.humTextureId
 			elseif v:FindFirstChild("SurfaceAppearance") then
-				v.SurfaceAppearance.ColorMap = chamsType.humTextureId
+				v.SurfaceAppearance.ColorMap = theme.humTextureId
 			end
 		end
 	end
