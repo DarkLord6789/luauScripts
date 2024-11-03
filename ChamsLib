@@ -14,7 +14,7 @@ function ChamsLibrary:SetConfigTransparency(newTransparency, theme)
 end
 
 function ChamsLibrary:SetConfigTransparencyOutline(newTransparencyOutline, theme)
-	theme.highlightOutlineTransparency = newOutlineTransparency
+	theme.highlightOutlineTransparency = newTransparencyOutline
 end
 
 function ChamsLibrary:SetTransparencyChams(Dir, value)
@@ -25,7 +25,6 @@ end
 
 function ChamsLibrary:SetBorderTransparency(Dir, value)
 	if Dir:FindFirstChild("EraChams") then
-		print('changing111')
 		Dir.EraChams.OutlineTransparency = value
 	end
 end
