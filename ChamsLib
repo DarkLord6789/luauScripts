@@ -57,6 +57,7 @@ end
 
 function ChamsLibrary:UpdateHumanoid(PDir, theme)
 	for i, v in pairs(PDir:GetChildren()) do
+		print(theme.customHum)
 		if theme.customHum then
 			if v:IsA("MeshPart") then
 				v.Color = theme.humPartsColor
