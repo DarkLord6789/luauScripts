@@ -1,4 +1,12 @@
 local ChamsType = {
+	custom = {
+		highlightColor = Color3.fromRGB(255, 255, 255);
+		highlightOutColor = Color3.fromRGB(255, 255, 255);
+		highlightTransparency = 0;
+		highlightOutlineTransparency = 1;
+		
+		customHum = false;
+	};
 	default = {
 		highlightColor = Color3.fromRGB(200, 200, 200);
 		highlightOutColor = Color3.fromRGB(120, 120, 120);
