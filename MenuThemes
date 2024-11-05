@@ -17,7 +17,7 @@ local Themes = {
 			ToggleKnob = Color3.fromRGB(0,0,0);
 
 			DropdownMain = Color3.fromRGB(255, 255, 255);
-			DropdownTransparency = 0.93;
+			DropdownTransparency = 0.83;
 
 			Text = Color3.fromRGB(240, 240, 240);
 		},
