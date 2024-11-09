@@ -20,6 +20,7 @@ local Themes = {
 			DropdownTransparency = 0.1;
 
 			Text = Color3.fromRGB(240, 240, 240);
+			SubText = Color3.fromRGB(170,170,170);
 		},
 		Light = {
 			SecondElements = Color3.fromRGB(0, 103, 192);
@@ -41,6 +42,7 @@ local Themes = {
 			DropdownTransparency = 0.1;
 
 			Text = Color3.fromRGB(0,0,0);
+			SubText = Color3.fromRGB(40, 40, 40);
 		},
 	},
 }
