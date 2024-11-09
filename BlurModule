@@ -30,7 +30,6 @@ function BlurredGui.init(parent)
     
     ParentFrame:SetAttribute("BlurIntensity", START_INTENSITY)
 
-    local BLUR_OBJ          = Instance.new("DepthOfFieldEffect")
     BLUR_OBJ.FarIntensity   = 0
     BLUR_OBJ.NearIntensity  = ParentFrame:GetAttribute("BlurIntensity")
     BLUR_OBJ.FocusDistance  = 0.25
