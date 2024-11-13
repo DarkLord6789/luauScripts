@@ -15,6 +15,17 @@ local ChamsType = {
 		
 		customHum = false;
 	};
+	Neon = {
+		highlightColor = Color3.fromRGB(129, 0, 139);
+		highlightOutColor = Color3.fromRGB(129, 0, 139);
+		highlightTransparency = 0.9;
+		highlightOutlineTransparency = 0.5;
+
+		customHum = true;
+		humPartsColor = Color3.fromRGB(129, 0, 139);
+		humTextureId = "";
+		humMaterial = "Neon";
+	};
 	Interferences = {
 		highlightColor = Color3.fromRGB(24, 105, 255);
 		highlightOutColor = Color3.fromRGB(30, 158, 255);
