@@ -21,7 +21,7 @@ local ChamsType = {
 		highlightTransparency = 0.9;
 		highlightOutlineTransparency = 0.5;
 
-		customHum = true;
+		customHum = false;
 		humPartsColor = Color3.fromRGB(129, 0, 139);
 		humTextureId = "";
 		humMaterial = "Neon";
@@ -32,7 +32,7 @@ local ChamsType = {
 		highlightTransparency = 0.9;
 		highlightOutlineTransparency = 0.5;
 
-		customHum = true;
+		customHum = false;
 		humPartsColor = Color3.fromRGB(47, 120, 255);
 		humTextureId = "rbxassetid://4504363124";
 		humMaterial = "ForceField";
@@ -43,7 +43,7 @@ local ChamsType = {
 		highlightTransparency = 0.6;
 		highlightOutlineTransparency = 0;
 
-		customHum = true;
+		customHum = false;
 		humPartsColor = Color3.fromRGB(35,35,35);
 		humTextureId = "rbxassetid://4887387040";
 		humMaterial = "ForceField";
@@ -54,7 +54,7 @@ local ChamsType = {
 		highlightTransparency = 0.6;
 		highlightOutlineTransparency = 0;
 
-		customHum = true;
+		customHum = false;
 		humPartsColor = Color3.fromRGB(75,0,0);
 		humTextureId = "rbxassetid://4887387040";
 		humMaterial = "ForceField";
@@ -65,7 +65,7 @@ local ChamsType = {
 		highlightTransparency = 0.8;
 		highlightOutlineTransparency = 0.5;
 
-		customHum = true;
+		customHum = false;
 		humPartsColor = Color3.fromRGB(30, 125, 20);
 		humTextureId = "rbxassetid://14810177971";
 		humMaterial = "ForceField";
