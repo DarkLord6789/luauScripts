@@ -170,6 +170,11 @@ function BlurredGui.Destroy(Partt)
 	if BlurObjects[Partt] ~= nil then
 		BlurObjects[Partt] = nil
 	end
+	for i, v in pairs(game.Workspace.Camera:GetChildren()) do
+		if v.Name == "Part" then
+			v:Destroy()
+		end
+	end
 	rebuildPartsList()
 end
 
