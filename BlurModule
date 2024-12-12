@@ -166,7 +166,9 @@ function BlurredGui.updateAll()
 end
 
 function BlurredGui.Destroy(Partt)
-	Partt.Part:Destroy()
+	pcall(function()
+		Partt.Part:Destroy()
+	end)
 	if BlurObjects[Partt] ~= nil then
 		BlurObjects[Partt] = nil
 	end
